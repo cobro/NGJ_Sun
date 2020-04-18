@@ -29,7 +29,7 @@ MonoBehaviour:
   m_Name: HDRISky
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
+  m_AdvancedMode: 1
   rotation:
     m_OverrideState: 0
     m_Value: 0
@@ -40,18 +40,18 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -1.51
   multiplier:
     m_OverrideState: 0
     m_Value: 1
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
-    m_Value: 3.8074396
+    m_Value: 1.9718862
     min: 0
   upperHemisphereLuxColor:
     m_OverrideState: 0
-    m_Value: {x: 0.5, y: 0.38792408, z: 0.2806782}
+    m_Value: {x: 0.5, y: 0.5, z: 0.5}
   desiredLuxValue:
     m_OverrideState: 0
     m_Value: 20000
@@ -67,12 +67,12 @@ MonoBehaviour:
     m_Value: 0
   hdriSky:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: 3dacf31294e808941b9dbbb4ac22a151, type: 3}
+    m_Value: {fileID: 8900000, guid: 8ef39192b4a0c433788ae1051bdeaaab, type: 2}
   enableBackplate:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   backplateType:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   groundLevel:
     m_OverrideState: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
     showEyeDropper: 1
   maxFogDistance:
     m_OverrideState: 1
-    m_Value: 1670.2
+    m_Value: 600
     min: 0
   mipFogMaxMip:
     m_OverrideState: 0
@@ -194,7 +194,7 @@ MonoBehaviour:
     m_Value: 0
   maximumHeight:
     m_OverrideState: 1
-    m_Value: 36.92
+    m_Value: 80.5
   albedo:
     m_OverrideState: 1
     m_Value: {r: 0.8396226, g: 0.71432453, b: 0.51882344, a: 1}
@@ -210,7 +210,7 @@ MonoBehaviour:
     m_Value: 1
   anisotropy:
     m_OverrideState: 1
-    m_Value: -0.84
+    m_Value: -0.96
     min: -1
     max: 1
   globalLightProbeDimmer:
