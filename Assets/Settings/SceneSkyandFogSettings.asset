@@ -40,10 +40,10 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: -0.59
+    m_Value: -2.55
   multiplier:
     m_OverrideState: 1
-    m_Value: 6.4
+    m_Value: 0.17
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   backplateType:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   groundLevel:
     m_OverrideState: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
     showEyeDropper: 1
   maxFogDistance:
     m_OverrideState: 1
-    m_Value: 2000
+    m_Value: 1000
     min: 0
   mipFogMaxMip:
     m_OverrideState: 0
@@ -191,10 +191,10 @@ MonoBehaviour:
     min: 0
   baseHeight:
     m_OverrideState: 1
-    m_Value: 50
+    m_Value: -500
   maximumHeight:
     m_OverrideState: 1
-    m_Value: 5085.3
+    m_Value: 500
   albedo:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -203,14 +203,14 @@ MonoBehaviour:
     showEyeDropper: 1
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 560
+    m_Value: 268.7
     min: 1
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
   anisotropy:
     m_OverrideState: 1
-    m_Value: -0.965
+    m_Value: -0.851
     min: -1
     max: 1
   globalLightProbeDimmer:
