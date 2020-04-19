@@ -5,20 +5,21 @@ using UnityEngine.VFX;
 
 public class SunImpactControl : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-
     [SerializeField]
-
     private VisualEffect visualEffect;
-
-    [SerializeField, Range(0, 2)]
+    public float MaxImpact = 0;
     private float Impact = 0;
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-
+        Impact = MaxImpact;
         visualEffect.SetFloat("Impact", Impact);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        Impact = 0;
+        visualEffect.SetFloat("Impact", Impact);
+        Debug.Log("Collision ended");
     }
 }

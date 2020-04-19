@@ -4,6 +4,7 @@
 //
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace MFlight.Demo
 {
@@ -60,6 +61,12 @@ namespace MFlight.Demo
             rollOverride = false;
             pitchOverride = false;
 
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Scene scene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(scene.name);
+            }
+
             float keyboardRoll = Input.GetAxis("Horizontal");
             if (Mathf.Abs(keyboardRoll) > .25f)
             {
@@ -67,13 +74,14 @@ namespace MFlight.Demo
             }
 
             float keyboardPitch = Input.GetAxis("Vertical");
+            forceMult = tempForceMultiply;
             if (keyboardPitch > .25f)
             {
                 forceMult = tempForceMultiply * 5;
             }
-            else
+            if (keyboardPitch < -.25f)
             {
-                forceMult = tempForceMultiply;
+                forceMult = 0;
             }
 
             // Calculate the autopilot stick inputs.
