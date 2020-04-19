@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   massCoefficient: 100
-  angle: 322
+  angle: 193
   Sun: 0
   Planet: 1
   Moon: 0
