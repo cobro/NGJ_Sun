@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualEffect: {fileID: 5788635145069442782}
-  Impact: 0
+  MaxImpact: 0
 --- !u!1 &5788635145079277119
 GameObject:
   m_ObjectHideFlags: 0
