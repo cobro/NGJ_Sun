@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ca19c0cc3d54446ddb836fc95c9b27a8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Space Adventure
+  fontNames:
+  - Space Adventure
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b087f0df1a9ed48f586dd60c78bf678f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
