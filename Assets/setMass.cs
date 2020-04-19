@@ -10,10 +10,11 @@ public class setMass : MonoBehaviour
     Rigidbody rbToAttract;
     Rigidbody orbitedBody;
     float orbitedBodyDistance = 100000;
-    float massCoefficient = 100;
+    [SerializeField]
+    float massCoefficient = 500;
     float G = 6.67f;
-    float randomScale;
-    float angle;
+    [SerializeField]
+    float angle = 135;
     public bool Sun = false;
     public bool Planet = false;
     public bool Moon = false;
@@ -42,7 +43,21 @@ public class setMass : MonoBehaviour
             }
             orbitalSpeed = Mathf.Sqrt(G*orbitedBody.mass/orbitedBodyDistance);
             rb.AddForce(Quaternion.AngleAxis(angle, rb.position) * Vector3.Cross(shit, rb.position).normalized * orbitalSpeed, ForceMode.VelocityChange);
-            Debug.DrawLine(rb.position, rb.position + Quaternion.AngleAxis(angle, rb.position) * Vector3.Cross(shit, rb.position).normalized * 20, Color.red, 10);
+        }
+
+        if (Moon == true && Planets != null)
+        {
+            foreach (Rigidbody tempRB in Planets)
+            {
+                float tempOrbitedBodyDistance = Vector3.Distance(tempRB.position, transform.position);
+                if (tempOrbitedBodyDistance < orbitedBodyDistance)
+                {
+                    orbitedBodyDistance = tempOrbitedBodyDistance;
+                    orbitedBody = tempRB;
+                }
+            }
+            orbitalSpeed = Mathf.Sqrt(G * orbitedBody.mass / orbitedBodyDistance);
+            rb.AddForce(Quaternion.AngleAxis(angle, rb.position) * Vector3.Cross(shit, rb.position).normalized * orbitalSpeed + orbitedBody.velocity, ForceMode.VelocityChange);
         }
     }
 
@@ -90,16 +105,6 @@ public class setMass : MonoBehaviour
         if (Moons != null && Moon)
             Moons.Remove(this.rb);
     }
-
-   /* private void Update()
-    {
-        if(orbitedBody != null)
-        {
-            Debug.DrawLine(rb.position, orbitedBody.position);
-            Debug.DrawLine(rb.position, rb.position + Quaternion.AngleAxis(Random.Range(0, 360), rb.position - orbitedBody.position) * Vector3.Cross(shit, rb.position - orbitedBody.position).normalized * 20);
-        }
-        
-    }*/
 
     private void OnValidate()
     {
