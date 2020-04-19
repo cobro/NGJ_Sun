@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class setMass : MonoBehaviour
 {
 
@@ -30,6 +29,40 @@ public class setMass : MonoBehaviour
 
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+        rb.mass = transform.localScale.x * massCoefficient;
+
+        if (Attractors == null)
+        {
+            Attractors = new List<setMass>();
+        }
+        Attractors.Add(this);
+
+        if (Sun == true)
+        {
+            if (Suns == null)
+            {
+                Suns = new List<Rigidbody>();
+            }
+            Suns.Add(this.rb);
+        }
+        if (Planet == true)
+        {
+            if (Planets == null)
+            {
+                Planets = new List<Rigidbody>();
+            }
+            Planets.Add(this.rb);
+        }
+        if (Moon == true)
+        {
+            if (Moons == null)
+            {
+                Moons = new List<Rigidbody>();
+            }
+            Moons.Add(this.rb);
+        }
+
         angle = Random.Range(0, 360);
         if (Planet == true && Suns!=null)
         {
@@ -61,7 +94,7 @@ public class setMass : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         if (Attractors == null)
         {
@@ -93,9 +126,9 @@ public class setMass : MonoBehaviour
             }
             Moons.Add(this.rb);
         }
-    }
+    }*/
 
-    private void OnDisable()
+    /*private void OnDisable()
     {
         Attractors.Remove(this);
         if (Suns != null && Sun)
@@ -104,14 +137,13 @@ public class setMass : MonoBehaviour
             Planets.Remove(this.rb);
         if (Moons != null && Moon)
             Moons.Remove(this.rb);
-    }
+    }*/
 
     private void OnValidate()
     {
         //randomScale = Random.Range(1, 10);
         //transform.localScale = new Vector3(randomScale, randomScale, randomScale);
-        rb = GetComponent<Rigidbody>();
-        rb.mass = transform.localScale.x * massCoefficient;
+
     }
 
 
