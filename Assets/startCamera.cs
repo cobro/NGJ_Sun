@@ -7,6 +7,7 @@ public class startCamera : MonoBehaviour
 {
     public GameObject MouseFlightRig;
     public Image crosshair;
+    public Text instructions;
     public GameObject StartScreenCamera;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class startCamera : MonoBehaviour
         {
             MouseFlightRig.SetActive(true);
             StartScreenCamera.SetActive(false);
+            instructions.enabled = false;
             crosshair.enabled = true;
         }
     }
