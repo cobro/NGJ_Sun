@@ -42,13 +42,15 @@ namespace MFlight.Demo
 
         private bool rollOverride = false;
         private bool pitchOverride = false;
+        float tempForceMultiply;
 
         private void Awake()
         {
             rigid = GetComponent<Rigidbody>();
-
+            Cursor.lockState = CursorLockMode.Locked;
             if (controller == null)
                 Debug.LogError(name + ": Plane - Missing reference to MouseFlightController!");
+            tempForceMultiply = forceMult;
         }
 
         private void Update()
@@ -65,10 +67,13 @@ namespace MFlight.Demo
             }
 
             float keyboardPitch = Input.GetAxis("Vertical");
-            if (Mathf.Abs(keyboardPitch) > .25f)
+            if (keyboardPitch > .25f)
             {
-                pitchOverride = true;
-                rollOverride = true;
+                forceMult = tempForceMultiply * 5;
+            }
+            else
+            {
+                forceMult = tempForceMultiply;
             }
 
             // Calculate the autopilot stick inputs.
